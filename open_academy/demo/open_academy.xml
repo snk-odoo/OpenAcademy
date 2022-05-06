@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+          <record id="object0" model="open_academy.course">
+            <field name="name">Basic</field>
+            <field name="description">Turbo Basic</field>
+            <field name="cost">100</field>
+          </record>
+
+          <record id="object1" model="open_academy.course">
+            <field name="name">Pascal</field>
+            <field name="description">Borland Pascal</field>
+            <field name="cost">150</field>
+          </record>
+
+          <record id="object2" model="open_academy.course">
+            <field name="name">Assembler</field>
+            <field name="description">Turbo Assembler</field>
+            <field name="cost">500</field>
+          </record>
+
+          <record id="object3" model="open_academy.course">
+            <field name="name">C++</field>
+            <field name="description">Visual C++</field>
+            <field name="cost">250</field>
+          </record>
+
+          <record id="object4" model="open_academy.course">
+            <field name="name">Prolog</field>
+            <field name="description">Turbo Prolog</field>
+             <field name="cost">900</field>
+         </record>
+<!--
+-->
+    </data>
+</odoo>
