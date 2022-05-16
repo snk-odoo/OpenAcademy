@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        <record id="academy_courses_tree" model="ir.ui.view">
+            <field name="name">Academy Courses: tree</field>
+            <field name="model">academy.courses</field>
+            <field name="arch" type="xml">
+                <tree string="Courses">
+                    <field name="name"/>
+                    <field name="teacher_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="academy_courses_form" model="ir.ui.view">
+            <field name="name">Academy Courses: form</field>
+            <field name="model">academy.courses</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="name"/>
+                        <field name="teacher_id"/>
+                    </sheet>
+                    <!--div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div-->
+                </form>
+            </field>
+        </record>
+
+        <record id="academy_courses_search" model="ir.ui.view">
+            <field name="name">Academy Courses: search</field>
+            <field name="model">academy.courses</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="teacher_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_academy_courses" model="ir.actions.act_window">
+            <field name="name">Academy Courses</field>
+            <field name="res_model">academy.courses</field>
+        </record>
+
+        <menuitem id="menu_academy_courses" parent="menu_academy" action="action_academy_courses"/>
+    </data>
+</odoo>

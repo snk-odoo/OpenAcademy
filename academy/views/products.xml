@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        <!-- It doesn't work like that! -->
+        <!--template id="product_item_hide_no_price" inherit_id="website_sale.products_item">
+            <xpath expr="//div[hasclass('product_price')]/b" position="attributes">
+                <attribute name="t-if">product.price &gt; 0</attribute>
+            </xpath>
+        </template-->
+
+        <!-- By default, a zero price is not displayed. -->
+        <template id="product_item_hide_no_price" inherit_id="website_sale.products_item">
+            <xpath expr="//div[hasclass('product_price')]" position="attributes">
+                <attribute name="t-if">product.price &gt; 0</attribute>
+            </xpath>
+        </template>
+
+       <record id="category_courses" model="product.public.category">
+            <field name="name">Courses</field>
+            <!--field name="parent_id" ref="website_sale.categ_others"/-->
+            <field name="parent_id" ref="website_sale.services"/>
+        </record>
+
+        <record id="website_sale.products_categories" model="ir.ui.view">
+            <field name="active" eval="True"/>
+        </record>
+
+        <record model="ir.ui.view" id="academy_products_tree">
+            <field name="name">academy.products.tree</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='default_code']" position="after">
+                    <field name="teacher_id"/>
+                </xpath>
+            </field>
+        </record>
+
+         <record model="ir.ui.view" id="academy_products_form">
+            <field name="name">academy.products.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_policy']" position="after">
+                    <field name="teacher_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="products_tree_action">
+          <field name="name">Products</field>
+          <field name="res_model">product.template</field>
+          <field name="view_mode">tree,form</field>
+          <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                    Create the first product
+            </p>
+          </field>
+        </record>
+
+        <menuitem id="menu_academy_products" parent="menu_academy" name="Academy Products" action="products_tree_action"/>
+
+   </data>
+</odoo>
