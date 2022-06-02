@@ -289,7 +289,7 @@
 <!--
     <menuitem name="OpenAcademy" id="open_academy.menu_root"/>
 -->
-    <menuitem name="Open Academy" id="main_open_academy_menu"/>
+    <menuitem name="Open Academy" id="main_open_academy_menu" sequence="0"/>
     <!-- menu categories -->
 <!--
     <menuitem name="Menu 1" id="open_academy.menu_1" parent="open_academy.menu_root"/>
