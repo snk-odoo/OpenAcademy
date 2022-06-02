@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <!-- This option doesn't work. -->
+    <template id="assets_frontend" name="My Style" inherit_id="website.assets_frontend">
+        <xpath expr="link[last()]" position="after">
+            <link rel="stylesheet" type="text/css" href="/theme_tutorial/static/scss/style.scss"/>
+        </xpath>
+    </template>
+    <template id="_assets_primary_variables" name="My SCSS variables" inherit_id="website._assets_primary_variables">
+        <xpath expr="link[last()]" position="after">
+            <link rel="stylesheet" type="text/css" href="/theme_tutorial/static/scss/primary_variables.scss"/>
+        </xpath>
+    </template>
+    <template id="_assets_frontend_helpers" inherit_id="website._assets_frontend_helpers">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/css" href="/theme_tutorial/static/src/scss/bootstrap_overridden.scss"/>
+        </xpath>
+    </template>
+    <template id="my_js" inherit_id="website.assets_editor" name="My JavaScript">
+        <xpath expr="script[last()]" position="after">
+            <script type="text/javascript" src="/theme_tutorial/static/src/js/tutorial_editor.js"/>
+        </xpath>
+    </template>
+</odoo>

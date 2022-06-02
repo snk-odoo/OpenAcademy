@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <template id="s_testimonial" name="Testimonial Snippet">
+        <section class="s_testimonial">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 text-center">
+                        <img alt="client" class="rounded-circle" src="/theme_tutorial/static/src/img/images3.jpeg"/>
+                        <h3>Faith</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <img alt="client" class="rounded-circle" src="/theme_tutorial/static/src/img/images8.jpeg"/>
+                        <h3>Hope</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <img alt="client" class="rounded-circle" src="/theme_tutorial/static/src/img/images11.jpeg"/>
+                        <h3>Love</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="place_into_bar" inherit_id="website.snippets" name="Place into Bar">
+        <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]" position="inside">
+            <t t-snippet="theme_tutorial.s_testimonial"
+               t-thumbnail="/theme_tutorial/static/src/img/ui/snippet_thumb.svg"/>
+        </xpath>
+    </template>
+</odoo>
