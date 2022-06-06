@@ -5,10 +5,10 @@
     'summary': 'The module is designed for learning',
 
     'description': """
-        Long description of module's purpose
+        The module implemented tasks from quest 2 and refactored from quest 5.
     """,
 
-    'author': "My Company",
+    'author': "SNK",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -18,28 +18,34 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'board'],
+    'depends': ['base', 'board', 'attachment_indexation'],
 
     # always loaded
     'data': [
-        'security/security.xml',
+        'security/open_academy_groups.xml',
+        'security/open_academy_security.xml',
         'security/ir.model.access.csv',
-        #'views/views.xml',
-        #'views/templates.xml',
-        'views/open_academy.xml',
-        'views/partner.xml',
-        'views/dashboard.xml',
+        'views/main_menu.xml',
+        'views/course_views.xml',
+        'views/course_menus.xml',
+        'views/session_views.xml',
+        'views/session_menus.xml',
+        'views/partner_views.xml',
+        'views/partner_menus.xml',
+        'views/wizard_views.xml',
+        'views/wizard_menus.xml',
+        'views/dashboard_views.xml',
+        'views/dashboard_menus.xml',
         'reports/reports.xml',
     ],
+
     # only loaded in demonstration mode
     'demo': [
-        #'demo/demo.xml',
-        'demo/open_academy.xml',
-
+        'data/course_demo.xml',
     ],
+
     'installable': True,
     'auto_install': False,
     'application': True,
-    'sequence': 0,
     'license': 'LGPL-3',
 }

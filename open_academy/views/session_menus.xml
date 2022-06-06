@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <record id="session_action" model="ir.actions.act_window">
+        <field name="name">Sessions</field>
+        <field name="res_model">open_academy.session</field>
+        <field name="view_mode">tree,calendar,graph,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create the first session
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="sessions_menu" name="Sessions" parent="open_academy_menu" sequence="20" action="session_action"/>
+</odoo>

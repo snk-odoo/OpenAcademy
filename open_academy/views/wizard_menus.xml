@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <act_window id="launch_session_wizard"
+                name="Add Attendees"
+                binding_model="open_academy.session"
+                res_model="open_academy.wizard"
+                view_mode="form"
+                target="new"/>
+</odoo>

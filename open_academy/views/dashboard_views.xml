@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data noupdate="1">
+        <record id="course_tree_action" model="ir.actions.act_window">
+            <field name="name">Courses</field>
+            <field name="res_model">open_academy.course</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="session_graph_action" model="ir.actions.act_window">
+            <field name="name">Sessions</field>
+            <field name="res_model">open_academy.session</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="open_academy.open_academy_session_graph"/>
+        </record>
+
+        <record id="session_calendar_action" model="ir.actions.act_window">
+            <field name="name">Sessions</field>
+            <field name="res_model">open_academy.session</field>
+            <field name="view_mode">calendar</field>
+            <field name="view_id" ref="open_academy.open_academy_session_calendar"/>
+        </record>
+
+        <record id="dashboard_view_form" model="ir.ui.view">
+            <field name="name">dashboard.view.form</field>
+            <field name="model">board.board</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Dashboard">
+                    <board style="1-2">
+                        <column>
+                            <action string="Courses Tree" name="%(open_academy.course_tree_action)d"/>
+                            <action string="Session Graph" name="%(open_academy.session_graph_action)d"/>
+                        </column>
+                        <column>
+                            <action string="Session Calendar" name="%(open_academy.session_calendar_action)d"/>
+                        </column>
+                    </board>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
